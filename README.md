@@ -1,2 +1,2 @@
-# python_programming_practice.
+# python_programming_practice
 Python programming practice.
