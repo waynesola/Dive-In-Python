@@ -14,4 +14,4 @@ for url in listUrls:
     if not re.search("\.jpg|JPG$", url['href']):
         print(url.get_text(), ">>>", "https://en.wikipedia.org" + url['href'])
 
-print('OK!')
+print('Well done!')
