@@ -21,8 +21,8 @@ import re
 # resp = urlopen('https://en.wikipedia.org/wiki/Main_Page').read().decode('utf-8')  # 最好使用utf-8编码显示
 # soup = bs(resp, 'html.parser')
 # listUrls = soup.findAll('a', href=re.compile('^/wiki/'))
-# for t in listUrls:
-#     print(t['href'])#输出每个列表项的href属性
+# for url in listUrls:
+#     print(url['href'])#输出每个列表项的href属性
 
 # part 4:简化输出2，过滤图片链接
 # resp = urlopen('https://en.wikipedia.org/wiki/Main_Page').read().decode('utf-8')  # 最好使用utf-8编码显示
