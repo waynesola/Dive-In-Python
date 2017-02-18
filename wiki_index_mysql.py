@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 import re
 import pymysql.cursors
 
-# part 1:
+
 resp = urlopen('https://en.wikipedia.org/wiki/Main_Page').read().decode('utf-8')  # 最好使用utf-8编码显示
 soup = bs(resp, 'html.parser')
 listUrls = soup.findAll('a', href=re.compile('^/wiki/'))
@@ -20,6 +20,7 @@ for url in listUrls:
         connection = pymysql.connect(host='localhost',
                                      user='root',
                                      password='88888888',
+                                     # db亦作database，即Schema名
                                      db='wiki_url',
                                      charset='utf8mb4')
 
