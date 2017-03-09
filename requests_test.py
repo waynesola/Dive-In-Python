@@ -1,10 +1,8 @@
 import requests
 
-url = 'https://api.github.com'
+url = 'https://sina.com.cn'
 
-r = requests.get('http://a7777777ap5l0e.com')
-
-if r.status_code == 200:
-    print(r.status_code)
-
-
+r = requests.get(url)
+r.encoding = 'utf-8'
+html = r.text
+print(html)

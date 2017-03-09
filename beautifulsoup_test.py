@@ -1,5 +1,8 @@
+#!/usr/bin/python
+# coding:utf-8
 from bs4 import BeautifulSoup
 import re
+from urllib2 import urlopen
 
 html_doc = """
 <html><head><title>The Dormouse's story</title></head>
@@ -22,8 +25,7 @@ soup = BeautifulSoup(html_doc, "html5lib")
 # 指定本地html
 # soup = BeautifulSoup(open(r"C:\Users\Administrator\Desktop\html_doc.html"), "html5lib")
 # 指定网址
-# soup = BeautifulSoup("www.baidu.com", "html5lib")
-
+# soup = BeautifulSoup(urlopen("www.baidu.com").read().decode("utf-8"), "html5lib")
 
 # prettify() 方法将Beautiful Soup的文档树格式化后以Unicode编码输出,每个XML/HTML标签都独占一行
 print(soup.prettify())
@@ -60,14 +62,11 @@ print(soup.a)
 # 获取soup的第一个a标签的class属性
 print(soup.a["class"])
 
-
 # 查找第一个title标签，直接返回结果
 print(soup.find('title'))
 
-
 # 查找第一个title标签，返回一个元素的列表
 soup.find_all('title', limit=1)
-
 
 # find_all( name , attrs , recursive , text , **kwargs )方法
 # 查找所有a标签
@@ -105,5 +104,3 @@ print(soup.find_all(text=re.compile("e")))
 
 # 查找所有class属性为sister的a标签
 print(soup.find_all("a", attrs={"class": "sister"}))
-
-
