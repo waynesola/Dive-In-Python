@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 使用BeautifulSoup4获取维基百科主页的所有词条，并保存在MySQL数据库。
 '''
